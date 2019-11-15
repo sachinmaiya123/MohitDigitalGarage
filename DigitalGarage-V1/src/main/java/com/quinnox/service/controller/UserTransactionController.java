@@ -35,7 +35,7 @@ public class UserTransactionController {
 	private TransactionalImagesService imageService;
 	
 	@GetMapping(value="/getAllTransactions/{userId}")
-	public List<UserTransaction> getAllTransactionsByUserId(@PathVariable("userId") int userId){
+	public List<UserTransaction> getAllTransactionsByUserId(@PathVariable("userId") String userId){
 		 List<UserTransaction> transactionList = transactionService.getAllTransactionsByUserId(userId);
 		 for(UserTransaction transaction : transactionList){
 			 List<String> urlList = new ArrayList<>();
@@ -52,6 +52,7 @@ public class UserTransactionController {
 	@PostMapping(value="/addTransaction",consumes="application/json")
 	public String makeTransaction(@RequestBody UserTransaction transaction) {
 		 imageList = transaction.getImageURLS();
+		 imageList.stream().forEach(s -> System.out.println(s));
 		 int transactionID = transactionService.saveTransaction(transaction);
 		 return saveImageURLS(transactionID, imageList);
 	}
@@ -68,6 +69,7 @@ public class UserTransactionController {
 		return transaction;
 	}
 	
+	// used by this class , don't remove
 	public String saveImageURLS(int transactionId,List<String> imageURLS) {
 		try {
 			for(String image : imageURLS){

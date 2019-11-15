@@ -15,7 +15,7 @@ public class UserTransactionService {
 	@Autowired
 	private UserTransactionRepository transactionRepository;
 	
-	public List<UserTransaction> getAllTransactionsByUserId(int userId){
+	public List<UserTransaction> getAllTransactionsByUserId(String userId){
 		return transactionRepository.getAllTransactionByUserId(userId);
 	}
 	

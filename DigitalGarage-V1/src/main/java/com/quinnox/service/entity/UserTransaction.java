@@ -29,7 +29,7 @@ public class UserTransaction implements Serializable{
 	@Column(name = "transaction_note")
 	private String transactionNote;
 	@Column(name = "user_id")
-	private int userId;
+	private String userId;
 	@Transient
 	private List<String> imageURLS;
 
@@ -89,11 +89,11 @@ public class UserTransaction implements Serializable{
 		this.transactionNote = transactionNote;
 	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
@@ -113,21 +113,7 @@ public class UserTransaction implements Serializable{
 				+ imageURLS + "]";
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Float.floatToIntBits(amount);
-		result = prime * result + ((imageURLS == null) ? 0 : imageURLS.hashCode());
-		result = prime * result + ((latitude == null) ? 0 : latitude.hashCode());
-		result = prime * result + ((longitude == null) ? 0 : longitude.hashCode());
-		result = prime * result + ((transactionDate == null) ? 0 : transactionDate.hashCode());
-		result = prime * result + transactionId;
-		result = prime * result + ((transactionNote == null) ? 0 : transactionNote.hashCode());
-		result = prime * result + ((transactionTitle == null) ? 0 : transactionTitle.hashCode());
-		result = prime * result + userId;
-		return result;
-	}
+	
 
 	@Override
 	public boolean equals(Object obj) {

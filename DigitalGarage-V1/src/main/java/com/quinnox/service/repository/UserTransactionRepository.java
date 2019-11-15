@@ -12,6 +12,6 @@ import com.quinnox.service.entity.UserTransaction;
 public interface UserTransactionRepository extends JpaRepository<UserTransaction, Integer>{
 
 	@Query(nativeQuery=true,value="select * from user_transaction where user_id = ?1")
-	public List<UserTransaction> getAllTransactionByUserId(int userId);
+	public List<UserTransaction> getAllTransactionByUserId(String userId);
 	
 }
