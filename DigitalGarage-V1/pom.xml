@@ -28,7 +28,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-
+		<finalName>digitalGarage-15112019</finalName>
 	</build>
 
 	<dependencies>
