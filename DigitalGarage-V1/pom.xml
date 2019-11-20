@@ -5,6 +5,7 @@
 	<groupId>com.quinnox</groupId>
 	<artifactId>DigitalGarage-V1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging> 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -27,7 +28,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-			<packaging>war</packaging> 
 		<finalName>digitalGarage</finalName>
 	</build>
 
